@@ -9,7 +9,7 @@
            max-width: 650px;
            line-height: 1.6;
            font-size: 22px;
-           font-family: Nighty;
+           font-family: 'Garamond', serif;
            color:#f04110;
            background-color: #fed5af;
            padding:0 10px} 
@@ -21,6 +21,25 @@
       img {display: inline-block;
            margin-left: auto;
            margin-right: auto;}
+      #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 40px; 
+          right: 50px;
+          z-index: 99;
+          border: none; 
+          outline: none;
+          background-color: #f04110;
+          color: white;
+          cursor: pointer;
+          padding: 20px;
+          border-radius: 15px;
+          font-size: 23px;
+          font-family: 'Garamond', serif;
+        }
+        #myBtn:hover {
+          background-color: #f29b54;
+        }
       </style>
   </head>
   
@@ -33,6 +52,7 @@
         <h1>My designs!</h1>
     </main>
     <hr style="border: 2px solid #f04110;">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <p>
       <strong>Family Stickers:</strong>
       <center>
@@ -61,7 +81,24 @@
       <img src="images/design/itasa.jpg" alt="itasa merch" style="width:75%">
       </center>
     </p>
-    <script src="index.js"></script>
+    <script>
+      let mybutton = document.getElementById("myBtn");
+
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
   </body>
   
 </html>
