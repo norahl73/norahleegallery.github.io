@@ -21,25 +21,14 @@
       img {display: inline-block;
            margin-left: auto;
            margin-right: auto;}
-      #myBtn {
-          display: none;
+      #topButton {
           position: fixed;
-          bottom: 40px; 
+          bottom: 40px;
           right: 50px;
           z-index: 99;
-          border: none; 
-          outline: none;
-          background-color: #f04110;
-          color: white;
           cursor: pointer;
-          padding: 20px;
-          border-radius: 15px;
-          font-size: 23px;
-          font-family: 'Garamond', serif;
-        }
-        #myBtn:hover {
-          background-color: #f29b54;
-        }
+          width: 190px;
+      }
       </style>
   </head>
   
@@ -47,12 +36,20 @@
     <main>
         <nav>
           <br>
-          <a href="index.html" style="color:#417042;">Go Back!</a> <br>
+          <a href="index.html">
+            <img id="backButton" src="images/buttons/back.gif" alt="back button" width="45%" margin-left="none"
+              onmouseover="this.src='images/buttons/backHover.gif';" 
+              onmouseout="this.src='images/buttons/back.gif';">
+          </a> <br>
         </nav>
         <h1>My designs!</h1>
     </main>
     <hr style="border: 2px solid #f04110;">
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <a href="#" onclick="topFunction()">
+      <img id="topButton" src="images/buttons/gotop.gif" alt="Top Button"
+          onmouseover="this.src='images/buttons/gotopHover.gif';" 
+          onmouseout="this.src='images/buttons/gotop.gif';">
+    </a>
     <p>
       <strong>Family Stickers:</strong>
       <center>
@@ -82,18 +79,6 @@
       </center>
     </p>
     <script>
-      let mybutton = document.getElementById("myBtn");
-
-      window.onscroll = function() {scrollFunction()};
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-
       function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
